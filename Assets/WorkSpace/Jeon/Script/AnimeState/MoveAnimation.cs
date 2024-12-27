@@ -17,4 +17,9 @@ public class MoveState : CharacterState
     {
         character.Move();
     }
+    public override void Exit()
+    {
+        base.Exit();
+        character.Rigidbody2D.velocity = Vector2.zero;
+    }
 }
