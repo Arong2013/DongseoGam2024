@@ -1,9 +1,58 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
+using UnityEngine.UIElements;
 
-public class CharacterMarcine : MonoBehaviour
+public enum CharacterAnimeBoolName
 {
+    CanCombo,
+    CanCharging,
+    CanDead,
+}
+public enum CharacterAnimeFloatName
+{
+    ChargingCount,
+    SpeedCount,
+}
+public enum CharacterAnimeIntName
+{
+    AttackType,
+    HitType,
+    RoarType,
+    MovementTypeX,
+    MovementTypeY,
+    InteractionType
+}
+public enum MovementType
+{
+    Walk = 1,
+    Jump = 2,
+    Roll = 3,
+    Falling = 4,
+}
+
+public enum InteractionType
+{
+    Climb = 1,
+    Throw = 2
+}
+
+public interface IDamageable
+{
+    public void TakeDamage(float DMG);
+}
+
+
+public class CharacterMarcine : MonoBehaviour, IDamageable
+{
+    List<IObserver> observers = new List<IObserver>();
+
+
     [SerializeField] float HP;
     [SerializeField] float MoveSpeed;
 
@@ -11,23 +60,75 @@ public class CharacterMarcine : MonoBehaviour
     protected Animator animator;
     protected Weapon playerWeapon;
     protected CharacterState currentBState;
+    protected SpriteRenderer spriteRenderer;
+    
+
+
+    protected CharacterAnimatorHandler characterAnimator;
+
+
 
 
     public Vector2 currentDir { get; protected set;}
+    public Vector2 AttackAngle { get; protected set;}
     public Rigidbody2D Rigidbody2D => rigidbody2D;
 
     public void Start()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        characterAnimator = new CharacterAnimatorHandler(animator);
+
+
+        LinkUi();
     }
-    public void Move()
+
+    private void Update()
     {
-        rigidbody2D.velocity = currentDir * MoveSpeed;
+        UpdataMovement();
     }
-    public void TakeDamage()
+
+    public void FixedUpdate()
+    {
+        currentBState?.Execute();
+    }
+
+    public void UpdataMovement()
     {
 
+        SetAnimatorValue(CharacterAnimeIntName.MovementTypeX,(int)currentDir.x);
+        SetAnimatorValue(CharacterAnimeIntName.MovementTypeY, (int)currentDir.y);
+    }
+
+    public void Move()
+    {
+        Vector2 moveDirection = currentDir.normalized * MoveSpeed;
+        Rigidbody2D.velocity = moveDirection;
+        if (currentDir.x != 0)
+        {
+            spriteRenderer.flipX = currentDir.x > 0;
+        }
+        rigidbody2D.velocity = currentDir * MoveSpeed;
+    }
+
+    public void Attack()
+    {
+
+    }
+    public void TakeDamage(float DMG)
+    {
+       
+    }
+
+    void LinkUi() => Utils.SetPlayerMarcineOnUI().ForEach(x => x.Initialize(this));
+    public void RegisterObserver(IObserver observer) => observers.Add(observer); public void UnregisterObserver(IObserver observer) => observers.Remove(observer);
+    public void NotifyObservers()
+    {
+        foreach (var observer in observers)
+        {
+            observer.UpdateObserver();
+        }
     }
     public void ChangePlayerState(CharacterState newState)
     {
@@ -35,6 +136,12 @@ public class CharacterMarcine : MonoBehaviour
         currentBState = newState;
         currentBState.Enter();
     }
-
     public void SetDir(Vector2 vector2) => currentDir = vector2;
+    public void SetAttackAngle(Vector2 vector2) => AttackAngle = vector2;
+
+    public void SetAnimatorValue<T>(T type, object value) where T : Enum { characterAnimator.SetAnimatorValue(type, value); }
+    public TResult GetAnimatorValue<T, TResult>(T type) where T : Enum { return characterAnimator.GetAnimatorValue<T, TResult>(type); }
+    public Type GetCharacterStateType() => currentBState.GetType();
+
+
 }
