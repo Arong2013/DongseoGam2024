@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class MonsterSpawn : MonoBehaviour
 {
-    public TimeText timeText;
+    public TimeManager timeManager;
 
     public GameObject monsterPrefab;
     public Transform[] spawnPoints;
@@ -22,16 +22,16 @@ public class MonsterSpawn : MonoBehaviour
 
     private void Update()
     {
-        if (timeText.timeRemaining > 0)
+        if (timeManager.timeRemaining > 0)
         {
-            currentSpawnInterval = Mathf.Max(minSpawnInterval, spawnInterval - (spawnSpeedIncrease * (timeText.startTime - timeText.timeRemaining)));
+            currentSpawnInterval = Mathf.Max(minSpawnInterval, spawnInterval - (spawnSpeedIncrease * (timeManager.startTime - timeManager.timeRemaining)));
         }
         else
         {
             currentSpawnInterval = minSpawnInterval;
         }
 
-        if (timeText.timeRemaining > 0 && Time.time % currentSpawnInterval < Time.deltaTime)
+        if (timeManager.timeRemaining > 0 && Time.time % currentSpawnInterval < Time.deltaTime)
         {
             Spawn();
             Debug.Log(currentSpawnInterval);
@@ -40,7 +40,7 @@ public class MonsterSpawn : MonoBehaviour
 
     void Spawn()
     {
-        int ranPoint = Random.Range(0, 10);
+        int ranPoint = Random.Range(0, 4);
         GameObject monster = Instantiate(monsterPrefab, spawnPoints[ranPoint].position, spawnPoints[ranPoint].rotation);
         monsters.Add(monster);
     }
