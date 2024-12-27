@@ -8,7 +8,8 @@ public class PlayerInputHandle : MonoBehaviour,IPlayerUesableUI
 
     public void Initialize(CharacterMarcine playerMarcine)
     {
-        this.characterMarcine = playerMarcine; 
+        this.characterMarcine = playerMarcine;
+    
     }
     private void Update()
     {
