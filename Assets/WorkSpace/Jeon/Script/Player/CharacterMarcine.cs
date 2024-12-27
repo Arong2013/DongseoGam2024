@@ -10,15 +10,15 @@ using UnityEngine.UIElements;
 
 public enum CharacterAnimeBoolName
 {
-    CanCombo,
-    CanCharging,
-    CanDead,
+    WalkSide,
     CanWalk
 }
 public enum CharacterAnimeFloatName
 {
     ChargingCount,
     SpeedCount,
+    WalkX,
+    WalkY
 }
 public enum CharacterAnimeIntName
 {
@@ -67,7 +67,7 @@ public abstract class CharacterMarcine : MonoBehaviour, IDamageable,ISubject
 
 
 
-
+    public bool Walkable;
     public Vector2 currentDir { get; protected set;}
     public Vector2 AttackAngle { get; protected set;}
     public Rigidbody2D Rigidbody2D => rigidbody2D;
@@ -79,31 +79,8 @@ public abstract class CharacterMarcine : MonoBehaviour, IDamageable,ISubject
         spriteRenderer = GetComponent<SpriteRenderer>();
         characterAnimator = new CharacterAnimatorHandler(animator);
 
-        LinkUi();
-    }
 
-    private void Update()
-    {
-        SetAnimatorValue(CharacterAnimeBoolName.CanWalk, true);
-        //UpdataMovement();
     }
-
-    public void FixedUpdate()
-    {
-        currentBState?.Execute();
-    }
-
-    public void UpdataMovement()
-    {
-        print(currentDir);
-        if(Mathf.Abs(currentDir.x) > 0.2 && Mathf.Abs(currentDir.y) > 0.2)
-        {
-            SetAnimatorValue(CharacterAnimeBoolName.CanWalk, true);
-            return;
-        }
-        SetAnimatorValue(CharacterAnimeBoolName.CanWalk, false);
-    }
-
     public void Move()
     {
         Vector2 moveDirection = currentDir.normalized * MoveSpeed;
@@ -112,6 +89,8 @@ public abstract class CharacterMarcine : MonoBehaviour, IDamageable,ISubject
         {
             spriteRenderer.flipX = currentDir.x > 0;
         }
+        SetAnimatorValue(CharacterAnimeFloatName.WalkX,currentDir.x);
+        SetAnimatorValue(CharacterAnimeFloatName.WalkY, currentDir.y);
         rigidbody2D.velocity = currentDir * MoveSpeed;
     }
 
@@ -124,7 +103,7 @@ public abstract class CharacterMarcine : MonoBehaviour, IDamageable,ISubject
         HP -= DMG;
     }
 
-    void LinkUi() => Utils.SetPlayerMarcineOnUI().ForEach(x => x.Initialize(this));
+    public void LinkUi() => Utils.SetPlayerMarcineOnUI().ForEach(x => x.Initialize(this));
     public void RegisterObserver(IObserver observer) => observers.Add(observer); public void UnregisterObserver(IObserver observer) => observers.Remove(observer);
     public void NotifyObservers()
     {

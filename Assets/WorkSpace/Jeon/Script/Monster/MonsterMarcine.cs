@@ -5,14 +5,13 @@ using UnityEngine;
 public class MonsterMarcine : CharacterMarcine
 {
     [SerializeField] List<BehaviorSequenceSO> behaviorSequencesSO;
-
-
     List<BehaviorSequence> behaviorSequences = new List<BehaviorSequence>();
 
     public override void Start()
     {
         base.Start();
         behaviorSequencesSO.ForEach(sequence => behaviorSequences.Add(sequence.CreatBehaviorSequence(this)));
+        Walkable = true;
     }
 
     private void Update()
@@ -25,6 +24,5 @@ public class MonsterMarcine : CharacterMarcine
             else
                 break;
         }
-        currentBState?.Execute();
     }
 }

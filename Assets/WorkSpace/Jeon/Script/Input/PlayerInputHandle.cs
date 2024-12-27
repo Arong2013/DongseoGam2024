@@ -24,7 +24,7 @@ public class PlayerInputHandle : MonoBehaviour,IPlayerUesableUI
             Vector2 direction = mousePosition - objectPosition;
             characterMarcine.SetAttackAngle(direction);
         }
-
+        characterMarcine.Walkable = Mathf.Abs(moveHorizontal) > 0.2 || Mathf.Abs(moveVertical) > 0.2;
         characterMarcine.SetDir(new Vector2(moveHorizontal, moveVertical));
     
     }
