@@ -37,4 +37,9 @@ public class MonsterMarcine : CharacterMarcine
                 break;
         }
     }
+
+    public void MonsterDeadEvent()
+    {
+        gameObject.SetActive(false);
+    }
 }
