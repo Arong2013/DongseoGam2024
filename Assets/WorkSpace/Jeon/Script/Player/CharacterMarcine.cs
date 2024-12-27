@@ -47,7 +47,7 @@ public interface IDamageable
 }
 
 
-public class CharacterMarcine : MonoBehaviour, IDamageable,ISubject
+public abstract class CharacterMarcine : MonoBehaviour, IDamageable,ISubject
 {
     List<IObserver> observers = new List<IObserver>();
 
@@ -121,7 +121,7 @@ public class CharacterMarcine : MonoBehaviour, IDamageable,ISubject
     }
     public void TakeDamage(float DMG)
     {
-       
+        HP -= DMG;
     }
 
     void LinkUi() => Utils.SetPlayerMarcineOnUI().ForEach(x => x.Initialize(this));
