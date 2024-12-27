@@ -5,6 +5,8 @@ using UnityEngine;
 public class Field : MonoBehaviour
 {
     [SerializeField] GameObject ItemOBJ;
+    [SerializeField] GameObject Spawner;
+    public float MapTime;
 
     public void Start()
     {
@@ -14,10 +16,15 @@ public class Field : MonoBehaviour
     public void SetTrueNextGame()
     {
         ItemOBJ.gameObject.SetActive(true);
+        Spawner.gameObject.SetActive(false);
     }
 
-    public void OnTriggerEnter2D(Collider2D collision)
+    public void GameStart()
     {
-
+        GameManager.Instance.playerMarcine.GameStart();
+        GameManager.Instance.playerMarcine.transform.position = Vector3.zero;
+        Spawner.gameObject.SetActive(true);
+        TimeManager.Instance.TimeReStart(MapTime);
+        
     }
 }

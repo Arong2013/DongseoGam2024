@@ -10,23 +10,15 @@ public class TakeDamagePost : MonoBehaviour
     Volume volume;
     Vignette vignette;
 
-    private void Awake()
+    public void TakeDMG()
     {
-        volume = GetComponent<Volume>();
+        if(volume == null)
+            volume = GetComponent<Volume>();
         if (volume.profile.TryGet<Vignette>(out vignette))
         {
             vignette.intensity.value = 0f;
         }
-    }
-
-    private void OnEnable()
-    {
-        TakeDMG();
-    }
-
-    public void TakeDMG()
-    {
-        // Vignette의 인텐시티 값을 0으로 감소
+        gameObject.SetActive(true);
         if (vignette != null )
         {
             StartCoroutine(ReduceVignetteIntensity());

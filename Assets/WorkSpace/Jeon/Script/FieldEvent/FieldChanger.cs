@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class FieldChanger : MonoBehaviour
 {
-    
+    [SerializeField] FieldParent fieldParent;
     bool SetNextGame = false;
+
+
+    public void Start()
+    {
+        GameManager.Instance.SetTrueNextStage += SetTrueNextGame;
+    }
 
     public void SetTrueNextGame()
     {
@@ -16,7 +22,7 @@ public class FieldChanger : MonoBehaviour
     {
         if(SetNextGame && collision.GetComponent<PlayerMarcine>())
         {
-
+            fieldParent.ChangeMap();
         }
     }
 }

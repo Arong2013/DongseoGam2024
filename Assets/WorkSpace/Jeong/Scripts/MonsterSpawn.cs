@@ -3,10 +3,9 @@ using UnityEngine;
 
 public class MonsterSpawn : MonoBehaviour
 {
-    public TimeManager timeManager;
+    public Field field;
     public GameObject[] monsterPrefab;
     public Transform[] spawnPoints;
-    public List<GameObject> monsters = new List<GameObject>();
 
     public float spawnInterval = 2f;            //기본 소환 간격
     public float minSpawnInterval = 1f;         //최소 소환 간격
@@ -21,27 +20,28 @@ public class MonsterSpawn : MonoBehaviour
 
     private void Update()
     {
-        if (timeManager.timeRemaining > 0)
+        if (TimeManager.Instance.timeRemaining > 0)
         {
-            currentSpawnInterval = Mathf.Max(minSpawnInterval, spawnInterval - (spawnSpeedIncrease * (timeManager.startTime - timeManager.timeRemaining)));
+            currentSpawnInterval = Mathf.Max(minSpawnInterval, spawnInterval - (spawnSpeedIncrease * (field.MapTime - TimeManager.Instance.timeRemaining)));
         }
         else
         {
             currentSpawnInterval = minSpawnInterval;
         }
 
-        if (timeManager.timeRemaining > 0 && Time.time % currentSpawnInterval < Time.deltaTime)
+        if (TimeManager.Instance.timeRemaining > 0 && Time.time % currentSpawnInterval < Time.deltaTime)
         {
             Spawn();
-            Debug.Log(currentSpawnInterval);
+            //Debug.Log(currentSpawnInterval);
         }
     }
 
     void Spawn()
     {
-        int ranMonster = Random.Range(0, 1);
-        int ranPoint = Random.Range(0, 4);
-        GameObject monster = Instantiate(monsterPrefab[ranMonster], spawnPoints[ranPoint].position, spawnPoints[ranPoint].rotation);
-        monsters.Add(monster);
+        int ranMonster = Random.Range(0, monsterPrefab.Length);
+        int ranPoint = Random.Range(0, spawnPoints.Length);
+        GameObject mob = Instantiate(monsterPrefab[ranMonster], transform);
+        mob.transform.position = spawnPoints[ranPoint].position;
+        //monsters.Add(monster);
     }
 }

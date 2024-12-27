@@ -21,7 +21,6 @@ public abstract class Singleton<T> : MonoBehaviour where T : Component
         }
         else if (instance != this)
         {
-
             Destroy(gameObject);
         }
     }

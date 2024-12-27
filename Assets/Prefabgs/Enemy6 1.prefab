@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 3786750752868056654}
   - component: {fileID: 2134011945661950355}
   m_Layer: 6
-  m_Name: Enemy3
+  m_Name: Enemy6 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -111,7 +111,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 6
-  m_Sprite: {fileID: -236979333, guid: bffe10dbb0979134d95ac69f27d2d4fb, type: 3}
+  m_Sprite: {fileID: -1213806031, guid: 50aff4ff3789dae44b510fa9287cd9a0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -206,7 +206,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.3125, y: 1.9375}
+    oldSize: {x: 1.75, y: 1.0625}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -233,31 +233,31 @@ MonoBehaviour:
     m_CategoryList:
     - m_Name: Car2
       m_Hash: 0
-      m_Sprite: {fileID: -236979333, guid: bffe10dbb0979134d95ac69f27d2d4fb, type: 3}
+      m_Sprite: {fileID: -1213806031, guid: 50aff4ff3789dae44b510fa9287cd9a0, type: 3}
     - m_Name: Car3
       m_Hash: 0
-      m_Sprite: {fileID: 1216629904, guid: bffe10dbb0979134d95ac69f27d2d4fb, type: 3}
+      m_Sprite: {fileID: -264105279, guid: 50aff4ff3789dae44b510fa9287cd9a0, type: 3}
     - m_Name: Car4
       m_Hash: 0
-      m_Sprite: {fileID: 1373577214, guid: bffe10dbb0979134d95ac69f27d2d4fb, type: 3}
+      m_Sprite: {fileID: 1808389192, guid: 50aff4ff3789dae44b510fa9287cd9a0, type: 3}
     - m_Name: var78
       m_Hash: 0
-      m_Sprite: {fileID: -1749710944, guid: bffe10dbb0979134d95ac69f27d2d4fb, type: 3}
+      m_Sprite: {fileID: -264105279, guid: 50aff4ff3789dae44b510fa9287cd9a0, type: 3}
   - m_Name: Down
     m_Hash: 0
     m_CategoryList:
     - m_Name: Car3
       m_Hash: 0
-      m_Sprite: {fileID: 981462791, guid: 5b533515e988bfb4680876c9fe8670c6, type: 3}
+      m_Sprite: {fileID: 642512072, guid: 50aff4ff3789dae44b510fa9287cd9a0, type: 3}
     - m_Name: Car2
       m_Hash: 0
-      m_Sprite: {fileID: -1153947474, guid: 5b533515e988bfb4680876c9fe8670c6, type: 3}
+      m_Sprite: {fileID: 223143151, guid: 50aff4ff3789dae44b510fa9287cd9a0, type: 3}
     - m_Name: Car4
       m_Hash: 0
-      m_Sprite: {fileID: -632594452, guid: 5b533515e988bfb4680876c9fe8670c6, type: 3}
+      m_Sprite: {fileID: -1362342357, guid: 50aff4ff3789dae44b510fa9287cd9a0, type: 3}
     - m_Name: Cha1
       m_Hash: 0
-      m_Sprite: {fileID: 210798363, guid: 5b533515e988bfb4680876c9fe8670c6, type: 3}
+      m_Sprite: {fileID: 642512072, guid: 50aff4ff3789dae44b510fa9287cd9a0, type: 3}
   m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: 6cfface8b067bd547bdfa02c66003177,
     type: 3}
 --- !u!114 &3786750752868056654

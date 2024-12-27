@@ -18,7 +18,8 @@ public class Item : MonoBehaviour
         if(collision.gameObject.GetComponent<PlayerMarcine>())
         {
             Utils.GetUI<InventoryUI>().AddItem(itemdata);
-
+            GameManager.Instance.SetTrueNextStage?.Invoke();
+            gameObject.SetActive(false);
         }
     }
 }

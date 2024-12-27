@@ -1,22 +1,13 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class TimeManager : Singleton<TimeManager>
 {
-    public StageManager stageManager;
-
-    public float startTime = 120f;  // ÃÊ±â Å¸ÀÌ¸Ó °ª
-    public float timeRemaining;     // ³²Àº ½Ã°£
-    public bool isActiveTimer = true;  // Å¸ÀÌ¸Ó È°¼ºÈ­ ¿©ºÎ
+    public float timeRemaining;     // ë‚¨ì€ ì‹œê°„
+    public bool isActiveTimer = false;  // íƒ€ì´ë¨¸ í™œì„±í™” ì—¬ë¶€
     public int minutes;
     public int seconds;
-
-    private void Start()
-    {
-        // Å¸ÀÌ¸Ó ÃÊ±âÈ­
-        timeRemaining = startTime;
-    }
 
     public void Update()
     {
@@ -26,26 +17,32 @@ public class TimeManager : Singleton<TimeManager>
             {
                 timeRemaining = 0;
                 isActiveTimer = false;
-                HandleEndOfStage();  // ½ºÅ×ÀÌÁö ³¡ Ã³¸®
+                HandleEndOfStage();  // ìŠ¤í…Œì´ì§€ ë ì²˜ë¦¬
             }
             else
             {
                 timeRemaining -= Time.deltaTime;
-                UpdateTime();  // ½Ã°£ °»½Å
+                UpdateTime();  // ì‹œê°„ ê°±ì‹ 
             }
         }
     }
 
-    // ½ºÅ×ÀÌÁö Á¾·á ½Ã ¸ó½ºÅÍ Á¦°Å ¹× Æ÷Å» »ı¼º
+    // ìŠ¤í…Œì´ì§€ ì¢…ë£Œ ì‹œ ëª¬ìŠ¤í„° ì œê±° ë° í¬íƒˆ ìƒì„±
     public void HandleEndOfStage()
     {
-        stageManager.KillMonster();
-        stageManager.SpawnPortal();
+        
+        GameManager.Instance.ItemEnable?.Invoke();
     }
 
     public void UpdateTime()
     {
         minutes = Mathf.FloorToInt(timeRemaining / 60);
         seconds = Mathf.FloorToInt(timeRemaining % 60);
-    }   
+    }
+
+    public void TimeReStart(float MapTime)
+    {
+        timeRemaining = MapTime;
+        isActiveTimer = true;
+    }
 }

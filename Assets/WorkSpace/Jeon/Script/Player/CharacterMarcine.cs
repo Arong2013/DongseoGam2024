@@ -122,5 +122,12 @@ public abstract class CharacterMarcine : MonoBehaviour, IDamageable,ISubject
     public Type GetCharacterStateType() => currentBState.GetType();
 
 
+    public void GameStart()
+    {
+        HP += 2;
+        if (HP > 6)
+            HP = 6;
+        NotifyObservers();
+    }
 
 }

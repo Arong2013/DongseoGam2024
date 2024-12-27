@@ -41,6 +41,15 @@ public class MonsterMarcine : CharacterMarcine
         }
     }
 
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.TryGetComponent<PlayerMarcine>(out PlayerMarcine marcine))
+        {
+            marcine.TakeDamage(1);
+        }    
+    }
+
     public void MonsterDeadEvent()
     {
         gameObject.SetActive(false);
