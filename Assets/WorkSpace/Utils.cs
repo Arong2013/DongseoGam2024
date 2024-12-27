@@ -22,7 +22,7 @@ public interface IObserver
 
 public interface IPlayerUesableUI
 {
-    void Initialize(CharacterMarcine playerMarcine);
+    void Initialize(PlayerMarcine playerMarcine);
 }
 public interface IHarvestable
 {

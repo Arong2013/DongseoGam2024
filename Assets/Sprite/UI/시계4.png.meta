@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9c58f0db27c7b1a4a869727d92c9e904
+guid: 919c12ffecedad04dadaa3119980832d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -71,7 +71,7 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -123,22 +123,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sowrd_0
+      name: "\uC2DC\uACC44_0"
       rect:
         serializedVersion: 2
-        x: 14
-        y: 7
-        width: 7
-        height: 13
-      alignment: 9
-      pivot: {x: 0.50586754, y: 0.56949943}
+        x: 11
+        y: 47
+        width: 107
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 550c3fbde97566e4884a41f19470dd64
-      internalID: 387261510
+      spriteID: 2719acbcccd609b4bb043987b281b3a9
+      internalID: 1687488730
       vertices: []
       indices: 
       edges: []
@@ -154,7 +154,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Sowrd_0: 387261510
+      "\uC2DC\uACC44_0": 1687488730
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

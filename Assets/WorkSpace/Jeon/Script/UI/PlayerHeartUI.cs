@@ -10,7 +10,7 @@ public class PlayerHeartUI : MonoBehaviour, IPlayerUesableUI, IObserver
     CharacterMarcine playermarcine; // 플레이어의 캐릭터 마시네
     List<HeartSlot> heartSlots; // HeartSlot 리스트
 
-    public void Initialize(CharacterMarcine playerMarcine)
+    public void Initialize(PlayerMarcine playerMarcine)
     {
         this.playermarcine = playerMarcine;
         playerMarcine.RegisterObserver(this);

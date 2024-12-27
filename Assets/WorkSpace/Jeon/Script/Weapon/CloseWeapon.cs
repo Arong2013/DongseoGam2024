@@ -4,20 +4,29 @@ using UnityEngine;
 
 public class CloseWeapon : Weapon
 {
-    [SerializeField] LayerMask ParentLayer;
-    [SerializeField] float Power;
+
+    [SerializeField] float coolTIme;
+    float cunCoolTime;
+
+    public void Start()
+    {
+        
+    }
+    private void Update()
+    {
+        cunCoolTime -= Time.deltaTime;
+    }
 
     public override void Attack()
     {
-        gameObject.SetActive(true);
-    }
-
-    public void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.TryGetComponent<IDamageable>(out IDamageable damageable) && collision.gameObject.layer != ParentLayer)
+        if(cunCoolTime <= 0)
         {
-            damageable.TakeDamage(Power);
-        }   
+            cunCoolTime = coolTIme;
+            Vector2 normalizedDirection = playerMarcine.AttackAngle.normalized;
+            float angle = Mathf.Atan2(normalizedDirection.y, normalizedDirection.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0, 0, angle - 45);
+            gameObject.SetActive(true);
+        }
     }
-    public void EventEvent() => gameObject.SetActive(false);
+    public override bool IsAttackAble() => cunCoolTime <= 0;
 }

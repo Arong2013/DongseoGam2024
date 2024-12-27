@@ -11,7 +11,8 @@ using UnityEngine.UIElements;
 public enum CharacterAnimeBoolName
 {
     WalkSide,
-    CanWalk
+    CanWalk,
+    CanAttack
 }
 public enum CharacterAnimeFloatName
 {
@@ -94,16 +95,11 @@ public abstract class CharacterMarcine : MonoBehaviour, IDamageable,ISubject
         rigidbody2D.velocity = currentDir * MoveSpeed;
     }
 
-    public void Attack()
-    {
+    public abstract void Attack();
 
-    }
-    public void TakeDamage(float DMG)
-    {
-        HP -= DMG;
-    }
+    public abstract void TakeDamage(float DMG);
 
-    public void LinkUi() => Utils.SetPlayerMarcineOnUI().ForEach(x => x.Initialize(this));
+ 
     public void RegisterObserver(IObserver observer) => observers.Add(observer); public void UnregisterObserver(IObserver observer) => observers.Remove(observer);
     public void NotifyObservers()
     {
@@ -124,6 +120,7 @@ public abstract class CharacterMarcine : MonoBehaviour, IDamageable,ISubject
     public void SetAnimatorValue<T>(T type, object value) where T : Enum { characterAnimator.SetAnimatorValue(type, value); }
     public TResult GetAnimatorValue<T, TResult>(T type) where T : Enum { return characterAnimator.GetAnimatorValue<T, TResult>(type); }
     public Type GetCharacterStateType() => currentBState.GetType();
+
 
 
 }
