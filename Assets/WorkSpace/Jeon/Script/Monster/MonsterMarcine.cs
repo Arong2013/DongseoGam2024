@@ -23,6 +23,9 @@ public class MonsterMarcine : CharacterMarcine
     public override void TakeDamage(float DMG)
     {
         animator.SetTrigger("SetDamage");
+        HP -= DMG;
+        if (HP < 0)
+            animator.SetTrigger("Dead");
     }
 
     private void Update()
