@@ -10,5 +10,11 @@ public class HeartSlot : MonoBehaviour
 
     public void SetSlot(float currentHP)
     {
+        if (currentHP < 0)
+        {
+            icon.sprite = HeartSpriteB;
+        }
+        else
+            icon.sprite = HeartSpriteA;
     }
 }
