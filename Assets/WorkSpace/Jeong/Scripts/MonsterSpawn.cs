@@ -4,8 +4,7 @@ using UnityEngine;
 public class MonsterSpawn : MonoBehaviour
 {
     public TimeManager timeManager;
-
-    public GameObject monsterPrefab;
+    public GameObject[] monsterPrefab;
     public Transform[] spawnPoints;
     public List<GameObject> monsters = new List<GameObject>();
 
@@ -15,7 +14,7 @@ public class MonsterSpawn : MonoBehaviour
 
     private float currentSpawnInterval;         //현재 소환 간격
 
-    private void Start()
+    void Start()
     {
         currentSpawnInterval = spawnInterval;
     }
@@ -40,8 +39,9 @@ public class MonsterSpawn : MonoBehaviour
 
     void Spawn()
     {
+        int ranMonster = Random.Range(0, 1);
         int ranPoint = Random.Range(0, 4);
-        GameObject monster = Instantiate(monsterPrefab, spawnPoints[ranPoint].position, spawnPoints[ranPoint].rotation);
+        GameObject monster = Instantiate(monsterPrefab[ranMonster], spawnPoints[ranPoint].position, spawnPoints[ranPoint].rotation);
         monsters.Add(monster);
     }
 }

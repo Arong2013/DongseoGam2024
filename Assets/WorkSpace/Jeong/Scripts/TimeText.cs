@@ -5,17 +5,13 @@ using TMPro;
 
 public class TimeText : MonoBehaviour
 {
-    public TimeManager timeManager;
-
     public TextMeshProUGUI timeText;
 
     void Update()
     {
-        UpdateTimeText();
-    }
+        int minutes = TimeManager.Instance.minutes;
+        int seconds = TimeManager.Instance.seconds;
 
-    void UpdateTimeText()
-    {
-        timeText.text = string.Format("{0:D2}:{1:D2}", timeManager.minutes, timeManager.seconds);
+        timeText.text = string.Format("{0:D2}:{1:D2}", minutes, seconds);
     }
 }
