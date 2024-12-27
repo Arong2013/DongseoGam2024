@@ -13,6 +13,7 @@ public enum CharacterAnimeBoolName
     CanCombo,
     CanCharging,
     CanDead,
+    CanWalk
 }
 public enum CharacterAnimeFloatName
 {
@@ -24,8 +25,6 @@ public enum CharacterAnimeIntName
     AttackType,
     HitType,
     RoarType,
-    MovementTypeX,
-    MovementTypeY,
     InteractionType
 }
 public enum MovementType
@@ -48,13 +47,13 @@ public interface IDamageable
 }
 
 
-public class CharacterMarcine : MonoBehaviour, IDamageable
+public abstract class CharacterMarcine : MonoBehaviour, IDamageable,ISubject
 {
     List<IObserver> observers = new List<IObserver>();
 
 
-    [SerializeField] float HP;
-    [SerializeField] float MoveSpeed;
+    public float HP;
+    public float MoveSpeed;
 
     protected Rigidbody2D rigidbody2D;
     protected Animator animator;
@@ -73,20 +72,20 @@ public class CharacterMarcine : MonoBehaviour, IDamageable
     public Vector2 AttackAngle { get; protected set;}
     public Rigidbody2D Rigidbody2D => rigidbody2D;
 
-    public void Start()
+    public virtual void Start()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         characterAnimator = new CharacterAnimatorHandler(animator);
 
-
         LinkUi();
     }
 
     private void Update()
     {
-        UpdataMovement();
+        SetAnimatorValue(CharacterAnimeBoolName.CanWalk, true);
+        //UpdataMovement();
     }
 
     public void FixedUpdate()
@@ -96,9 +95,13 @@ public class CharacterMarcine : MonoBehaviour, IDamageable
 
     public void UpdataMovement()
     {
-
-        SetAnimatorValue(CharacterAnimeIntName.MovementTypeX,(int)currentDir.x);
-        SetAnimatorValue(CharacterAnimeIntName.MovementTypeY, (int)currentDir.y);
+        print(currentDir);
+        if(Mathf.Abs(currentDir.x) > 0.2 && Mathf.Abs(currentDir.y) > 0.2)
+        {
+            SetAnimatorValue(CharacterAnimeBoolName.CanWalk, true);
+            return;
+        }
+        SetAnimatorValue(CharacterAnimeBoolName.CanWalk, false);
     }
 
     public void Move()
@@ -118,7 +121,7 @@ public class CharacterMarcine : MonoBehaviour, IDamageable
     }
     public void TakeDamage(float DMG)
     {
-       
+        HP -= DMG;
     }
 
     void LinkUi() => Utils.SetPlayerMarcineOnUI().ForEach(x => x.Initialize(this));

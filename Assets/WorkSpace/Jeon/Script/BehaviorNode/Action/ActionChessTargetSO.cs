@@ -13,32 +13,25 @@ public class ActionChessTargetSO : BehaviorActionSO
 
 public class ActionChessTarget : BehaviorAction
 {
-    Transform target;
     float stopDistance;
-    NavMeshAgent agent;
 
     public ActionChessTarget(float stopDistance)
     {
         this.stopDistance = stopDistance;
+        
     }
     public override BehaviorState Execute()
     {
-        if (agent == null)
+        var dis = character.transform.position - GameManager.Instance.playerMarcine.transform.position;
+        if (dis.magnitude <= stopDistance)
         {
-            agent = character.transform.GetComponent<NavMeshAgent>();
-            Debug.Log("에이전트 셋팅");
-        }
-        this.target = actionPhase.GetData("target") as Transform;
-        agent.SetDestination(target.position);
-        if (agent.hasPath)
-        {
-            character.SetAnimatorValue(CharacterAnimeFloatName.SpeedCount, 0f);
-            return BehaviorState.SUCCESS; // 행동 완료 상태 반환
+            return BehaviorState.SUCCESS;
         }
         else
         {
-            character.SetAnimatorValue(CharacterAnimeFloatName.SpeedCount, 0.1f);
-            return BehaviorState.RUNNING; // 행동 실행 중 상태 반환
+            character.SetDir(dis);
+            character.Move();
+            return BehaviorState.RUNNING;
         }
     }
 }

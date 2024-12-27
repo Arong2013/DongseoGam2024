@@ -13,28 +13,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Library:
-  - m_Name: Up
-    m_Hash: 370199250
-    m_CategoryList: []
-    m_OverrideEntries: []
-    m_FromMain: 0
-    m_EntryOverrideCount: 0
   - m_Name: Down
     m_Hash: 1020083973
     m_CategoryList: []
-    m_OverrideEntries: []
+    m_OverrideEntries:
+    - m_Name: Car2
+      m_Hash: 875479852
+      m_Sprite: {fileID: 530620983, guid: 48c13171859e34f45ba1e2522a05d815, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 530620983, guid: 48c13171859e34f45ba1e2522a05d815,
+        type: 3}
+    - m_Name: Car3
+      m_Hash: 53081018
+      m_Sprite: {fileID: 81388200, guid: 48c13171859e34f45ba1e2522a05d815, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 81388200, guid: 48c13171859e34f45ba1e2522a05d815,
+        type: 3}
+    - m_Name: Car4
+      m_Hash: 491611673
+      m_Sprite: {fileID: -1918847606, guid: 48c13171859e34f45ba1e2522a05d815, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1918847606, guid: 48c13171859e34f45ba1e2522a05d815,
+        type: 3}
     m_FromMain: 0
-    m_EntryOverrideCount: 0
-  - m_Name: Side
-    m_Hash: 62108811
-    m_CategoryList: []
-    m_OverrideEntries: []
-    m_FromMain: 0
-    m_EntryOverrideCount: 0
-  - m_Name: Idle
-    m_Hash: 1008081451
-    m_CategoryList: []
-    m_OverrideEntries: []
-    m_FromMain: 0
-    m_EntryOverrideCount: 0
+    m_EntryOverrideCount: 3
   m_PrimaryLibraryGUID: 
