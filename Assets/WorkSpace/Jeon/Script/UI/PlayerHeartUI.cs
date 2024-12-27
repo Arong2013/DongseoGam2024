@@ -10,12 +10,15 @@ public class PlayerHeartUI : MonoBehaviour, IPlayerUesableUI, IObserver
     CharacterMarcine playermarcine; // 플레이어의 캐릭터 마시네
     List<HeartSlot> heartSlots; // HeartSlot 리스트
 
+    float MaxHP;
+
     public void Initialize(PlayerMarcine playerMarcine)
     {
         this.playermarcine = playerMarcine;
+        MaxHP = playermarcine.HP;
         playerMarcine.RegisterObserver(this);
-
         CreateHeartSlots(playerMarcine.HP);
+ 
     }
 
     public void UpdateObserver()
@@ -29,11 +32,12 @@ public class PlayerHeartUI : MonoBehaviour, IPlayerUesableUI, IObserver
 
     private void CreateHeartSlots(float hp)
     {
-        for (var i = 0; i < hp; i++)
+        var curHP = hp;
+        for (var i = 0; i < MaxHP; i++)
         {
-            hp--;
+            curHP--;
             GameObject gameObject = Instantiate(heartSlot.gameObject, parent);
-            gameObject.GetComponent<HeartSlot>().SetSlot(hp);
+            gameObject.GetComponent<HeartSlot>().SetSlot(curHP);
         }
     }
 }
