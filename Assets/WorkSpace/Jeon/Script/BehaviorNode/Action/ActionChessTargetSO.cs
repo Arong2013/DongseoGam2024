@@ -22,7 +22,7 @@ public class ActionChessTarget : BehaviorAction
     }
     public override BehaviorState Execute()
     {
-        var dis = character.transform.position - GameManager.Instance.playerMarcine.transform.position;
+        var dis = GameManager.Instance.playerMarcine.transform.position - character.transform.position ;
         if (dis.magnitude <= stopDistance)
         {
             return BehaviorState.SUCCESS;

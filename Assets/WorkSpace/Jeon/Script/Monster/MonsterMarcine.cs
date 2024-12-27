@@ -10,8 +10,10 @@ public class MonsterMarcine : CharacterMarcine
     public override void Start()
     {
         base.Start();
+        Debug.Log("¾Æ¾Æ");
         behaviorSequencesSO.ForEach(sequence => behaviorSequences.Add(sequence.CreatBehaviorSequence(this)));
         Walkable = true;
+        currentBState = new IdleState(this,animator);
     }
 
     private void Update()
