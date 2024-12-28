@@ -6,6 +6,10 @@ public class PlayerInputHandle : MonoBehaviour, IPlayerUesableUI
 {
     PlayerMarcine characterMarcine;
     public bool IsinputAble;
+    public GameObject uiPanel;
+
+    // 게임이 일시 정지되었는지 여부
+    private bool isPaused = false;
 
     public void Initialize(PlayerMarcine playerMarcine)
     {
@@ -14,6 +18,23 @@ public class PlayerInputHandle : MonoBehaviour, IPlayerUesableUI
     }
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            // 게임이 일시 정지된 상태라면
+            if (isPaused)
+            {
+                uiPanel.SetActive(false);
+                Time.timeScale = 1f; // 게임 진행
+            }
+            else
+            {
+                uiPanel.SetActive(true);
+                Time.timeScale = 0f; // 게임 멈춤
+            }
+
+            // 일시 정지 상태 토글
+            isPaused = !isPaused;
+        }
         if (IsinputAble)
         {
             if (!characterMarcine) return;
