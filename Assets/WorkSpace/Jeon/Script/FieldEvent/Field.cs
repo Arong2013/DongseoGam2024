@@ -36,7 +36,7 @@ public class Field : MonoBehaviour
             GameManager.Instance.playerMarcine.ChangePlayerState(new IdleState(GameManager.Instance.playerMarcine, GameManager.Instance.playerMarcine.GetComponent<Animator>()));
             GameManager.Instance.playerMarcine.SetAnimatorValue(CharacterAnimeBoolName.CanWalk, false);
         }
-        
+        Pows.gameObject.SetActive(true);
         Spawner.gameObject.SetActive(false);
     }
 
