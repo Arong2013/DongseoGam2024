@@ -4759,8 +4759,9 @@ MonoBehaviour:
   CutID: 0
   ItemOBJ: {fileID: 350384377}
   Spawner: {fileID: 2058218508}
-  Pows: {fileID: 0}
+  Pows: {fileID: 2073963366}
   soundID: 13
+  devil: {fileID: 0}
   MapTime: 30
 --- !u!1 &477162191
 GameObject:
@@ -5284,6 +5285,12 @@ Transform:
   - {fileID: 2064044588}
   m_Father: {fileID: 2058218509}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &595666734 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2279002669560663072, guid: 39af21841f4f0d14e8962df97ef214ce,
+    type: 3}
+  m_PrefabInstance: {fileID: 1884580713}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &600065762
 GameObject:
   m_ObjectHideFlags: 0
@@ -5753,6 +5760,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1840da02a3224a49a096f5ef235be42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &642047081 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2279002669560663072, guid: 39af21841f4f0d14e8962df97ef214ce,
+    type: 3}
+  m_PrefabInstance: {fileID: 1952529896}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &697780898
 GameObject:
   m_ObjectHideFlags: 0
@@ -14387,8 +14400,9 @@ MonoBehaviour:
   CutID: 0
   ItemOBJ: {fileID: 132376167}
   Spawner: {fileID: 99828287}
-  Pows: {fileID: 0}
+  Pows: {fileID: 642047081}
   soundID: 12
+  devil: {fileID: 0}
   MapTime: 25
 --- !u!1 &1306202928
 GameObject:
@@ -16738,6 +16752,7 @@ MonoBehaviour:
   Spawner: {fileID: 701893393}
   Pows: {fileID: 0}
   soundID: 14
+  devil: {fileID: 0}
   MapTime: 1
 --- !u!1 &1505211438
 GameObject:
@@ -17202,8 +17217,9 @@ MonoBehaviour:
   CutID: 1
   ItemOBJ: {fileID: 1885928023}
   Spawner: {fileID: 576436619}
-  Pows: {fileID: 0}
+  Pows: {fileID: 595666734}
   soundID: 11
+  devil: {fileID: 0}
   MapTime: 20
 --- !u!1 &1654646635
 GameObject:
@@ -18122,6 +18138,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pow
+      objectReference: {fileID: 0}
+    - target: {fileID: 2279002669560663072, guid: 39af21841f4f0d14e8962df97ef214ce,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8881326811096062333, guid: 39af21841f4f0d14e8962df97ef214ce,
         type: 3}
@@ -21131,12 +21152,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87ac6accf72944742a1954d7c0a10f2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fastForwardSpeed: 2
   playableDirector: {fileID: 2073263285}
   cutSceneDatas:
   - ID: 1
     timelineClip: {fileID: 11400000, guid: 1d02ca94c04c0d842a97f7f8600e335d, type: 2}
   - ID: 100
     timelineClip: {fileID: 11400000, guid: 348001dcc8f61f24d876d7a6af3cd5cd, type: 2}
+--- !u!1 &2073963366 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2279002669560663072, guid: 39af21841f4f0d14e8962df97ef214ce,
+    type: 3}
+  m_PrefabInstance: {fileID: 871331000}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2098523894
 GameObject:
   m_ObjectHideFlags: 0
