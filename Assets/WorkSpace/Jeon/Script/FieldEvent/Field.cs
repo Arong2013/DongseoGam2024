@@ -11,6 +11,7 @@ public class Field : MonoBehaviour
     [SerializeField] GameObject Spawner;
     [SerializeField] GameObject Pows;
     [SerializeField] int soundID;
+    [SerializeField] private Devil devil;
 
     public float MapTime;
 
@@ -65,6 +66,11 @@ public class Field : MonoBehaviour
         TimeManager.Instance.TimeReStart(MapTime);
         GameManager.Instance.playerMarcine.transform.position = Vector3.zero;
         Spawner.gameObject.SetActive(true);
+
+        if (devil != null)
+        {
+            devil.NotifyMapChanged();  // 맵이 변경되었음을 알리기
+        }
     }
 
 }
