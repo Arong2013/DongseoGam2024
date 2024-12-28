@@ -22,6 +22,7 @@ public class FieldChanger : MonoBehaviour
     {
         if(SetNextGame && collision.GetComponent<PlayerMarcine>())
         {
+            Utils.GetUI<PlayerInputHandle>().IsinputAble = false;
             fieldParent.ChangeMap();
         }
     }

@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class MonsterSpawn : MonoBehaviour
 {
+
+    [SerializeField] GameObject Prins;
     public Field field;
     public GameObject[] monsterPrefab;
     public Transform[] spawnPoints;
@@ -33,6 +35,13 @@ public class MonsterSpawn : MonoBehaviour
         {
             Spawn();
             //Debug.Log(currentSpawnInterval);
+        }
+
+        if(Prins != null && TimeManager.Instance.timeRemaining < 10)
+        {
+            GameObject mob = Instantiate(Prins.gameObject, transform);
+            mob.transform.position = spawnPoints[0].position;
+            Prins = null;
         }
     }
 

@@ -8,7 +8,6 @@ public class SoundData
     [SerializeField] int id; // Sound ID
     [SerializeField] AudioClip data; // Sound clip 데이터
 
-    // getter와 setter 메소드
     public int ID => id;
     public AudioClip Data => data;
 }
@@ -35,8 +34,6 @@ public class SoundManager : Singleton<SoundManager>
             sfxSource.playOnAwake = false; // SFX는 자동 재생되지 않도록 설정
         }
     }
-
-    // BGM 재생
     public void PlayBGM(int soundID)
     {
         // SoundData 목록에서 해당 ID를 가진 SoundData 찾기
@@ -53,8 +50,6 @@ public class SoundManager : Singleton<SoundManager>
             Debug.LogWarning($"Sound ID {soundID} not found for BGM.");
         }
     }
-
-    // SFX 재생
     public void PlaySFX(int soundID)
     {
         // SoundData 목록에서 해당 ID를 가진 SoundData 찾기
@@ -79,8 +74,6 @@ public class SoundManager : Singleton<SoundManager>
             Debug.LogWarning($"Sound ID {soundID} not found for SFX.");
         }
     }
-
-    // 사운드 정지 (BGM, SFX 모두 정지)
     public void StopAllSounds()
     {
         bgmAudioSource.Stop(); // BGM 정지
@@ -89,20 +82,14 @@ public class SoundManager : Singleton<SoundManager>
             sfxSource.Stop(); // 모든 SFX 정지
         }
     }
-
-    // BGM 일시 정지
     public void PauseBGM()
     {
         bgmAudioSource.Pause();
     }
-
-    // BGM 재개
     public void ResumeBGM()
     {
         bgmAudioSource.UnPause();
     }
-
-    // SFX 정지
     public void StopSFX(int soundID)
     {
         SoundData soundData = soundDatas.Find(sound => sound.ID == soundID);

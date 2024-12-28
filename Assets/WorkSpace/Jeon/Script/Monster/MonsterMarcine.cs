@@ -6,18 +6,19 @@ public class MonsterMarcine : CharacterMarcine
 {
     [SerializeField] List<BehaviorSequenceSO> behaviorSequencesSO;
     List<BehaviorSequence> behaviorSequences = new List<BehaviorSequence>();
+    bool Pupple_Rain;
 
     public override void Attack()
     {
-        
+
     }
 
     public override void Start()
     {
         base.Start();
         behaviorSequencesSO.ForEach(sequence => behaviorSequences.Add(sequence.CreatBehaviorSequence(this)));
-        
-        currentBState = new IdleState(this,animator);
+
+        currentBState = new IdleState(this, animator);
     }
 
     public override void TakeDamage(float DMG)
@@ -30,6 +31,10 @@ public class MonsterMarcine : CharacterMarcine
 
     private void Update()
     {
+        if (Pupple_Rain)
+        {
+            TakeDamage(-0.3f);
+        }
         Walkable = true;
         for (var i = 0; i < behaviorSequences.Count; i++)
         {
@@ -44,10 +49,10 @@ public class MonsterMarcine : CharacterMarcine
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.TryGetComponent<PlayerMarcine>(out PlayerMarcine marcine))
+        if (collision.gameObject.TryGetComponent<PlayerMarcine>(out PlayerMarcine marcine))
         {
             marcine.TakeDamage(1);
-        }    
+        }
     }
 
     public void MonsterDeadEvent()
