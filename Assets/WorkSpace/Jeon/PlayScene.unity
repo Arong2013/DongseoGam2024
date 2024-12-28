@@ -12254,7 +12254,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundDatas:
   - id: 1
-    data: {fileID: 0}
+    data: {fileID: 8300000, guid: 062f30acac2c65d47878d5bb9b78176e, type: 3}
+  - id: 2
+    data: {fileID: 8300000, guid: 194d84079f3fb574583df98c630a34f5, type: 3}
+  - id: 3
+    data: {fileID: 8300000, guid: 65d674b05be0cd1439fa9f3e4fd3d958, type: 3}
+  - id: 4
+    data: {fileID: 8300000, guid: e19f45268072e634ead8bc67e1f594c8, type: 3}
+  - id: 5
+    data: {fileID: 8300000, guid: 2c695153bd42f904daed6889fa004eef, type: 3}
+  - id: 6
+    data: {fileID: 8300000, guid: 68bf9216f83bbe648abe5b8d1a96fa1e, type: 3}
+  - id: 7
+    data: {fileID: 8300000, guid: 3d5af8d5951193345be6ee75ba50de66, type: 3}
+  - id: 8
+    data: {fileID: 8300000, guid: a1a873c466ddacc4483d7795de1535e9, type: 3}
+  - id: 9
+    data: {fileID: 8300000, guid: 04e83f32744a9ae41855e9350682a077, type: 3}
+  - id: 10
+    data: {fileID: 8300000, guid: 48ec6e449e7b39646bec212b968bb2d8, type: 3}
+  - id: 11
+    data: {fileID: 8300000, guid: eda082253dffa18448c47754ceafefbb, type: 3}
+  - id: 12
+    data: {fileID: 8300000, guid: a939f503cdc01e94ebd6fa1ffd518cf1, type: 3}
+  - id: 13
+    data: {fileID: 8300000, guid: 00ebf7a58e866ed41972623719bc0a89, type: 3}
+  - id: 14
+    data: {fileID: 8300000, guid: e35dff00dd0f27e4d8f9341cf9b5a9f3, type: 3}
+  - id: 15
+    data: {fileID: 8300000, guid: 1ad9f4c7273f33d4fae2e5ff83ffadf3, type: 3}
   bgmAudioSource: {fileID: 1250311486}
   sfxAudioSources:
   - {fileID: 1250311485}
