@@ -48,11 +48,4 @@ public class CutScenemanager : Singleton<CutScenemanager>
     {
         Utils.GetUI<PlayerInputHandle>().IsinputAble = true;
     }
-    public void Update()
-    {
-        if (IsCutEnd)
-        {
-            OnCutSceneEnd();
-        }
-    }
 }

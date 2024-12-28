@@ -32,6 +32,7 @@ public class Field : MonoBehaviour
     {
         if(CutID != 0)
         {
+            Utils.GetUI<PlayerInputHandle>().IsinputAble = false;
             CutScenemanager.Instance.PlayCutScene(CutID);
             yield return new WaitForSeconds(1f);
             while (CutScenemanager.Instance.IsCutEnd)
@@ -43,6 +44,7 @@ public class Field : MonoBehaviour
     }
     public void StartWaitForTimelineEnd()
     {
+        Utils.GetUI<PlayerInputHandle>().IsinputAble = true;
         GameManager.Instance.playerMarcine.GameStart();
         TimeManager.Instance.TimeReStart(MapTime);
         GameManager.Instance.playerMarcine.transform.position = Vector3.zero;

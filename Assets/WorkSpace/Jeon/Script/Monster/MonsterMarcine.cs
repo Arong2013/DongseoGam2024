@@ -6,7 +6,7 @@ public class MonsterMarcine : CharacterMarcine
 {
     [SerializeField] List<BehaviorSequenceSO> behaviorSequencesSO;
     List<BehaviorSequence> behaviorSequences = new List<BehaviorSequence>();
-    bool Pupple_Rain;
+    [SerializeField] bool Pupple_Rain;
 
     public override void Attack()
     {

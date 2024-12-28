@@ -293,3 +293,4 @@ MonoBehaviour:
   Walkable: 1
   behaviorSequencesSO:
   - {fileID: 11400000, guid: ba7e028e1cf99854e97591ff877e88af, type: 2}
+  Pupple_Rain: 1
