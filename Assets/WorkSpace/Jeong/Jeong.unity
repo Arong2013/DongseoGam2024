@@ -2779,7 +2779,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3838ce2a2fa5abf45830be17ed2ec3f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeManager: {fileID: 934840282}
+  Prins: {fileID: 0}
+  field: {fileID: 0}
   monsterPrefab:
   - {fileID: 1297613406519114039, guid: c6d805df9868d1d459ecbf12209b8445, type: 3}
   spawnPoints:
@@ -2787,7 +2788,6 @@ MonoBehaviour:
   - {fileID: 1347467476}
   - {fileID: 409991763}
   - {fileID: 1613349964}
-  monsters: []
   spawnInterval: 1
   minSpawnInterval: 0.05
   spawnSpeedIncrease: 0.02
@@ -13635,5 +13635,5 @@ SceneRoots:
   - {fileID: 576436621}
   - {fileID: 1694540908}
   - {fileID: 1814057223}
-  - {fileID: 1351057931}
   - {fileID: 1458799926}
+  - {fileID: 1351057931}
