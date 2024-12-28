@@ -23,13 +23,4 @@ public class FieldParent : MonoBehaviour
     {
         Maps[currentID].GameStart();
     }
-
-
-    private void Update()
-    {
-        if(currentID == Maps.Count-1)
-        {
-
-        }
-    }
 }

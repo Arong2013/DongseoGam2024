@@ -15,8 +15,8 @@ public class SoundData
 public class SoundManager : Singleton<SoundManager>
 {
     [SerializeField] List<SoundData> soundDatas; // 사운드 데이터 목록
-    private AudioSource bgmAudioSource; // BGM을 위한 AudioSource
-    private List<AudioSource> sfxAudioSources; // SFX를 위한 여러 AudioSource
+    [SerializeField] AudioSource bgmAudioSource; // BGM을 위한 AudioSource
+    [SerializeField] List<AudioSource> sfxAudioSources; // SFX를 위한 여러 AudioSource
 
     private void Start()
     {

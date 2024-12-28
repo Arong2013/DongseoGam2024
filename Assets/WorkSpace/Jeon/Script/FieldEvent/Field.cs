@@ -30,20 +30,23 @@ public class Field : MonoBehaviour
 
     IEnumerator WaitForTimelineEnd()
     {
-        CutScenemanager.Instance.PlayCutScene(CutID);
-        yield return new WaitForSeconds(1f);
-        while (CutScenemanager.Instance.IsCutEnd)
+        if(CutID != 0)
         {
-            yield return null;  
+            CutScenemanager.Instance.PlayCutScene(CutID);
+            yield return new WaitForSeconds(1f);
+            while (CutScenemanager.Instance.IsCutEnd)
+            {
+                yield return null;
+            }
         }
         StartWaitForTimelineEnd();
     }
     public void StartWaitForTimelineEnd()
     {
         GameManager.Instance.playerMarcine.GameStart();
+        TimeManager.Instance.TimeReStart(MapTime);
         GameManager.Instance.playerMarcine.transform.position = Vector3.zero;
         Spawner.gameObject.SetActive(true);
-        TimeManager.Instance.TimeReStart(MapTime);
     }
 
 }

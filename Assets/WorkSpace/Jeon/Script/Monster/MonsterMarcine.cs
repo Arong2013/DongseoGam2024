@@ -59,4 +59,12 @@ public class MonsterMarcine : CharacterMarcine
     {
         gameObject.SetActive(false);
     }
+
+    private void OnDisable()
+    {
+        if(Pupple_Rain)
+        {
+            CutScenemanager.Instance.PlayCutScene(100);
+        }
+    }
 }
