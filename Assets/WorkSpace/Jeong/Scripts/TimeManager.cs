@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TimeManager : Singleton<TimeManager>
 {
@@ -13,6 +14,10 @@ public class TimeManager : Singleton<TimeManager>
     {
         if (isActiveTimer)
         {
+            if(timeRemaining <= 15)
+            {
+                Utils.GetUI<Devil>().gameObject.SetActive(true);
+            }
             if (timeRemaining <= 0)
             {
                 timeRemaining = 0;
@@ -45,4 +50,6 @@ public class TimeManager : Singleton<TimeManager>
         timeRemaining = MapTime;
         isActiveTimer = true;
     }
+
+
 }
