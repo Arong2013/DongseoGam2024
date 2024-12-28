@@ -79,8 +79,6 @@ public abstract class CharacterMarcine : MonoBehaviour, IDamageable,ISubject
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         characterAnimator = new CharacterAnimatorHandler(animator);
-
-
     }
     public void Move()
     {

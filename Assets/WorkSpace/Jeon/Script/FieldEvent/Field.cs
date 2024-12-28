@@ -44,11 +44,15 @@ public class Field : MonoBehaviour
     }
     public void StartWaitForTimelineEnd()
     {
-        Utils.GetUI<PlayerInputHandle>().IsinputAble = true;
-        GameManager.Instance.playerMarcine.GameStart();
-        TimeManager.Instance.TimeReStart(MapTime);
-        GameManager.Instance.playerMarcine.transform.position = Vector3.zero;
-        Spawner.gameObject.SetActive(true);
+        if(CutID != 4)
+        {
+            Utils.GetUI<PlayerInputHandle>().IsinputAble = true;
+            GameManager.Instance.playerMarcine.GameStart();
+            TimeManager.Instance.TimeReStart(MapTime);
+            GameManager.Instance.playerMarcine.transform.position = Vector3.zero;
+            Spawner.gameObject.SetActive(true);
+        }
+
     }
 
 }

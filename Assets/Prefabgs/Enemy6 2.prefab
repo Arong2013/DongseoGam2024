@@ -111,7 +111,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 6
-  m_Sprite: {fileID: 748020935, guid: e0c82d65470070b4e917204b46126291, type: 3}
+  m_Sprite: {fileID: 1996761164, guid: 602800cb15169c149bb9da34cbe27dc7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -233,31 +233,31 @@ MonoBehaviour:
     m_CategoryList:
     - m_Name: Car2
       m_Hash: 0
-      m_Sprite: {fileID: 748020935, guid: e0c82d65470070b4e917204b46126291, type: 3}
+      m_Sprite: {fileID: 1996761164, guid: 602800cb15169c149bb9da34cbe27dc7, type: 3}
     - m_Name: Car3
       m_Hash: 0
-      m_Sprite: {fileID: 197022335, guid: e0c82d65470070b4e917204b46126291, type: 3}
+      m_Sprite: {fileID: -750674011, guid: 602800cb15169c149bb9da34cbe27dc7, type: 3}
     - m_Name: Car4
       m_Hash: 0
-      m_Sprite: {fileID: 748020935, guid: e0c82d65470070b4e917204b46126291, type: 3}
+      m_Sprite: {fileID: 1880021607, guid: 602800cb15169c149bb9da34cbe27dc7, type: 3}
     - m_Name: var78
       m_Hash: 0
-      m_Sprite: {fileID: -2097031804, guid: e0c82d65470070b4e917204b46126291, type: 3}
+      m_Sprite: {fileID: -1951057645, guid: 602800cb15169c149bb9da34cbe27dc7, type: 3}
   - m_Name: Down
     m_Hash: 0
     m_CategoryList:
     - m_Name: Car3
       m_Hash: 0
-      m_Sprite: {fileID: 748020935, guid: e0c82d65470070b4e917204b46126291, type: 3}
+      m_Sprite: {fileID: 1996761164, guid: 602800cb15169c149bb9da34cbe27dc7, type: 3}
     - m_Name: Car2
       m_Hash: 0
-      m_Sprite: {fileID: 197022335, guid: e0c82d65470070b4e917204b46126291, type: 3}
+      m_Sprite: {fileID: -750674011, guid: 602800cb15169c149bb9da34cbe27dc7, type: 3}
     - m_Name: Car4
       m_Hash: 0
-      m_Sprite: {fileID: 748020935, guid: e0c82d65470070b4e917204b46126291, type: 3}
+      m_Sprite: {fileID: 1880021607, guid: 602800cb15169c149bb9da34cbe27dc7, type: 3}
     - m_Name: Cha1
       m_Hash: 0
-      m_Sprite: {fileID: -2097031804, guid: e0c82d65470070b4e917204b46126291, type: 3}
+      m_Sprite: {fileID: -1951057645, guid: 602800cb15169c149bb9da34cbe27dc7, type: 3}
   m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: 6cfface8b067bd547bdfa02c66003177,
     type: 3}
 --- !u!114 &3786750752868056654
@@ -293,4 +293,4 @@ MonoBehaviour:
   Walkable: 1
   behaviorSequencesSO:
   - {fileID: 11400000, guid: ba7e028e1cf99854e97591ff877e88af, type: 2}
-  Pupple_Rain: 1
+  Pupple_Rain: 0
