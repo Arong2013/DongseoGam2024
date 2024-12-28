@@ -4611,10 +4611,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f235c5c10d65b9a4686504328cc26a0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fieldParent: {fileID: 0}
   CutID: 0
   ItemOBJ: {fileID: 350384377}
   Spawner: {fileID: 2058218508}
-  MapTime: 45
+  MapTime: 3
 --- !u!1 &477162191
 GameObject:
   m_ObjectHideFlags: 0
@@ -7980,7 +7981,7 @@ Transform:
   m_GameObject: {fileID: 935427018}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.36, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -13296,10 +13297,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f235c5c10d65b9a4686504328cc26a0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fieldParent: {fileID: 0}
   CutID: 0
   ItemOBJ: {fileID: 132376167}
   Spawner: {fileID: 99828287}
-  MapTime: 40
+  MapTime: 3
 --- !u!1 &1312317333
 GameObject:
   m_ObjectHideFlags: 0
@@ -15499,7 +15501,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f235c5c10d65b9a4686504328cc26a0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CutID: 4
+  fieldParent: {fileID: 609922627}
+  CutID: 0
   ItemOBJ: {fileID: 0}
   Spawner: {fileID: 701893393}
   MapTime: 1
@@ -15961,10 +15964,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f235c5c10d65b9a4686504328cc26a0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fieldParent: {fileID: 0}
   CutID: 1
   ItemOBJ: {fileID: 1885928023}
   Spawner: {fileID: 576436619}
-  MapTime: 30
+  MapTime: 3
 --- !u!1 &1654646635
 GameObject:
   m_ObjectHideFlags: 0
