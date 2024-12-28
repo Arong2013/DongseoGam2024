@@ -261,6 +261,7 @@ GameObject:
   - component: {fileID: 84132420}
   - component: {fileID: 84132422}
   - component: {fileID: 84132421}
+  - component: {fileID: 84132423}
   m_Layer: 0
   m_Name: Capsule (1)
   m_TagString: Untagged
@@ -368,7 +369,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 7
+  m_SortingOrder: 3
   m_Sprite: {fileID: 586623614, guid: 1e40279a423cb4f4da55b2e5bcca3f3f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -380,6 +381,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &84132423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 84132419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1840da02a3224a49a096f5ef235be42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &99828287
 GameObject:
   m_ObjectHideFlags: 0
@@ -4977,6 +4990,7 @@ GameObject:
   - component: {fileID: 518185994}
   - component: {fileID: 518185996}
   - component: {fileID: 518185995}
+  - component: {fileID: 518185997}
   m_Layer: 0
   m_Name: Capsule (3)
   m_TagString: Untagged
@@ -5084,7 +5098,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 7
+  m_SortingOrder: 3
   m_Sprite: {fileID: 1950466868, guid: 24a14b4eeab311f499bbe3165275e8e3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5096,6 +5110,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &518185997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 518185993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1840da02a3224a49a096f5ef235be42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &520672587
 GameObject:
   m_ObjectHideFlags: 0
@@ -5593,6 +5619,7 @@ GameObject:
   - component: {fileID: 636203664}
   - component: {fileID: 636203666}
   - component: {fileID: 636203665}
+  - component: {fileID: 636203667}
   m_Layer: 0
   m_Name: Capsule (2)
   m_TagString: Untagged
@@ -5700,7 +5727,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 7
+  m_SortingOrder: 3
   m_Sprite: {fileID: 1950466868, guid: 24a14b4eeab311f499bbe3165275e8e3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5712,6 +5739,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &636203667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 636203663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1840da02a3224a49a096f5ef235be42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &697780898
 GameObject:
   m_ObjectHideFlags: 0
@@ -8524,7 +8563,7 @@ MonoBehaviour:
   Walkable: 0
   TakeDamagePost: {fileID: 1654646638}
   weapon: {fileID: 1893407499}
-  DamageCoolTime: 3
+  DamageCoolTime: 1
   CurDamageCoolTime: 0
 --- !u!1 &939504293
 GameObject:
@@ -8575,6 +8614,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsinputAble: 0
+  uiPanel: {fileID: 1899807922}
+  isBtnUp: 0
 --- !u!1 &946698973
 GameObject:
   m_ObjectHideFlags: 0
@@ -8733,6 +8774,7 @@ GameObject:
   - component: {fileID: 955393964}
   - component: {fileID: 955393966}
   - component: {fileID: 955393965}
+  - component: {fileID: 955393967}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -8840,7 +8882,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 7
+  m_SortingOrder: 3
   m_Sprite: {fileID: 586623614, guid: 1e40279a423cb4f4da55b2e5bcca3f3f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -8852,6 +8894,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &955393967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 955393963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1840da02a3224a49a096f5ef235be42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &961739749
 GameObject:
   m_ObjectHideFlags: 0
@@ -9076,6 +9130,7 @@ GameObject:
   - component: {fileID: 1052403024}
   - component: {fileID: 1052403026}
   - component: {fileID: 1052403025}
+  - component: {fileID: 1052403027}
   m_Layer: 0
   m_Name: Capsule (1)
   m_TagString: Untagged
@@ -9183,7 +9238,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 7
+  m_SortingOrder: 3
   m_Sprite: {fileID: 586623614, guid: 1e40279a423cb4f4da55b2e5bcca3f3f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -9195,6 +9250,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1052403027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1052403023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1840da02a3224a49a096f5ef235be42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1055269225
 GameObject:
   m_ObjectHideFlags: 3
@@ -9490,6 +9557,7 @@ GameObject:
   - component: {fileID: 1115923602}
   - component: {fileID: 1115923604}
   - component: {fileID: 1115923603}
+  - component: {fileID: 1115923605}
   m_Layer: 0
   m_Name: Capsule (3)
   m_TagString: Untagged
@@ -9597,7 +9665,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 7
+  m_SortingOrder: 3
   m_Sprite: {fileID: 1950466868, guid: 24a14b4eeab311f499bbe3165275e8e3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -9609,6 +9677,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1115923605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1115923601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1840da02a3224a49a096f5ef235be42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1123665258
 GameObject:
   m_ObjectHideFlags: 0
@@ -14044,6 +14124,7 @@ GameObject:
   - component: {fileID: 1295687619}
   - component: {fileID: 1295687621}
   - component: {fileID: 1295687620}
+  - component: {fileID: 1295687622}
   m_Layer: 0
   m_Name: Capsule (3)
   m_TagString: Untagged
@@ -14151,7 +14232,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 7
+  m_SortingOrder: 3
   m_Sprite: {fileID: 1950466868, guid: 24a14b4eeab311f499bbe3165275e8e3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -14163,6 +14244,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1295687622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1295687618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1840da02a3224a49a096f5ef235be42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1299081551
 GameObject:
   m_ObjectHideFlags: 0
@@ -14229,6 +14322,7 @@ GameObject:
   - component: {fileID: 1306202929}
   - component: {fileID: 1306202931}
   - component: {fileID: 1306202930}
+  - component: {fileID: 1306202932}
   m_Layer: 0
   m_Name: Capsule (2)
   m_TagString: Untagged
@@ -14336,7 +14430,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 7
+  m_SortingOrder: 3
   m_Sprite: {fileID: 1950466868, guid: 24a14b4eeab311f499bbe3165275e8e3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -14348,6 +14442,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1306202932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1306202928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1840da02a3224a49a096f5ef235be42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1312317333
 GameObject:
   m_ObjectHideFlags: 0
@@ -17482,6 +17588,7 @@ GameObject:
   - component: {fileID: 1782201554}
   - component: {fileID: 1782201556}
   - component: {fileID: 1782201555}
+  - component: {fileID: 1782201557}
   m_Layer: 0
   m_Name: Capsule (2)
   m_TagString: Untagged
@@ -17589,7 +17696,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 7
+  m_SortingOrder: 3
   m_Sprite: {fileID: 1950466868, guid: 24a14b4eeab311f499bbe3165275e8e3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -17601,6 +17708,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1782201557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1782201553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1840da02a3224a49a096f5ef235be42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1784916541
 GameObject:
   m_ObjectHideFlags: 0
@@ -17746,6 +17865,7 @@ GameObject:
   - component: {fileID: 1841901443}
   - component: {fileID: 1841901445}
   - component: {fileID: 1841901444}
+  - component: {fileID: 1841901446}
   m_Layer: 0
   m_Name: Capsule (1)
   m_TagString: Untagged
@@ -17853,7 +17973,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 7
+  m_SortingOrder: 3
   m_Sprite: {fileID: 586623614, guid: 1e40279a423cb4f4da55b2e5bcca3f3f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -17865,6 +17985,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1841901446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841901442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1840da02a3224a49a096f5ef235be42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1864804141
 GameObject:
   m_ObjectHideFlags: 0
@@ -18101,7 +18233,7 @@ GameObject:
   - component: {fileID: 1899807925}
   - component: {fileID: 1899807924}
   m_Layer: 5
-  m_Name: Qwes
+  m_Name: InformationUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20342,8 +20474,8 @@ RectTransform:
   - {fileID: 780492731}
   - {fileID: 939504294}
   - {fileID: 1486672899}
-  - {fileID: 1170373006}
   - {fileID: 1722830767}
+  - {fileID: 1170373006}
   - {fileID: 1899807923}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -20733,7 +20865,7 @@ PlayableDirector:
   m_GameObject: {fileID: 2073263283}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 0}
+  m_PlayableAsset: {fileID: 11400000, guid: 1d02ca94c04c0d842a97f7f8600e335d, type: 2}
   m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
@@ -22006,6 +22138,7 @@ GameObject:
   - component: {fileID: 2123288732}
   - component: {fileID: 2123288734}
   - component: {fileID: 2123288733}
+  - component: {fileID: 2123288735}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -22113,7 +22246,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 7
+  m_SortingOrder: 3
   m_Sprite: {fileID: 586623614, guid: 1e40279a423cb4f4da55b2e5bcca3f3f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -22125,6 +22258,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2123288735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123288731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1840da02a3224a49a096f5ef235be42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2128044530
 GameObject:
   m_ObjectHideFlags: 0
@@ -22136,6 +22281,7 @@ GameObject:
   - component: {fileID: 2128044531}
   - component: {fileID: 2128044533}
   - component: {fileID: 2128044532}
+  - component: {fileID: 2128044534}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -22243,7 +22389,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 7
+  m_SortingOrder: 3
   m_Sprite: {fileID: 586623614, guid: 1e40279a423cb4f4da55b2e5bcca3f3f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -22255,6 +22401,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2128044534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128044530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1840da02a3224a49a096f5ef235be42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2132922140
 GameObject:
   m_ObjectHideFlags: 0
