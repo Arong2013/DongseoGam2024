@@ -64,7 +64,7 @@ public class MonsterMarcine : CharacterMarcine
     {
         if(Pupple_Rain)
         {
-            CutScenemanager.Instance.PlayCutScene(100);
+            //Utils.GetUI<CutScenemanager>().PlayCutScene(100);
             Utils.GetUI<PlayerInputHandle>().IsinputAble = false;
             GameManager.Instance.playerMarcine.SetDir(new Vector2(0, -1));
             GameManager.Instance.playerMarcine.ChangePlayerState(new IdleState(GameManager.Instance.playerMarcine, GameManager.Instance.playerMarcine.GetComponent<Animator>()));

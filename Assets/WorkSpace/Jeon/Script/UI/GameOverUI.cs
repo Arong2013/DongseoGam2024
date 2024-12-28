@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;  // SceneManager를 사용하기 위한 네�
 
 public class GameOverUI : MonoBehaviour
 {
-    public Button ExitBtn;
+    public Button ExitBtn, ExitBtn2;
     public string sceneName = "GameScene";  // 이동할 씬 이름을 지정하는 변수
 
 
@@ -17,5 +17,6 @@ public class GameOverUI : MonoBehaviour
         SoundManager.Instance.StopAllSounds();
         SoundManager.Instance.PlaySFX(7);
         ExitBtn.onClick.AddListener(() => { SceneManager.LoadScene(sceneName); });
+        ExitBtn2.onClick.AddListener(() => { SceneManager.LoadScene(sceneName); });
     }
 }

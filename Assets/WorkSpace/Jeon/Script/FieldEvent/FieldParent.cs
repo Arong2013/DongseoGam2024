@@ -13,12 +13,6 @@ public class FieldParent : MonoBehaviour
     }
     public void ChangeMapStart()
     {
-        if(currentID >= Maps.Count)
-        {
-            CutScenemanager.Instance.PlayCutScene(100);
-            return;
-        }
-
         if(currentID >= 0)
             Maps[currentID].gameObject.SetActive(false);
         Maps[currentID + 1].gameObject.SetActive(true);
@@ -28,8 +22,31 @@ public class FieldParent : MonoBehaviour
 
     public void MapStart()
     {
-        if (currentID >= Maps.Count)
+        if (currentID >= Maps.Count-1)
+        {
+            StartCoroutine(StartTimeLine());
             return;
+        }
+            
         Maps[currentID].GameStart();
+    }
+    private void FixedUpdate()
+    {
+        if (currentID >= Maps.Count - 1)
+        {
+            GameManager.Instance.playerMarcine.transform.position = Vector3.zero;
+            Utils.GetUI<PlayerInputHandle>().IsinputAble = false;
+            GameManager.Instance.playerMarcine.SetAnimatorValue(CharacterAnimeBoolName.CanWalk, false);
+            GameManager.Instance.playerMarcine.SetDir(new Vector2(0, -1));
+            GameManager.Instance.playerMarcine.transform.GetComponent<Animator>().enabled = false;
+        }
+    }
+
+    IEnumerator StartTimeLine()
+    {
+
+        yield return new WaitForSeconds(2f);
+        CutScenemanager.Instance.PlayCutScene(100);
+       
     }
 }

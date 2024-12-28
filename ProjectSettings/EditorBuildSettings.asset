@@ -6,9 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/WorkSpace/Jeon/TitleScene.unity
+    path: Assets/WorkSpace/TitleScene.unity
     guid: a23b7f36265d4c04f9361c2068f5e1e6
   - enabled: 1
-    path: Assets/WorkSpace/Jeon/NormalScene.unity
-    guid: 9872d400d7357b84db0c195057cc4c54
+    path: Assets/WorkSpace/Hard.unity
+    guid: 6c9e275a4a56e764a86aa66830d0a8ba
+  - enabled: 1
+    path: Assets/WorkSpace/Easy.unity
+    guid: b5f331ed823a2f34e82e31df6370ba7b
+  - enabled: 1
+    path: Assets/WorkSpace/Normal.unity
+    guid: 75ce017a5224cad40a8c46089237cf9c
   m_configObjects: {}

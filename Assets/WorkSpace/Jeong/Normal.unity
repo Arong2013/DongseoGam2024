@@ -4873,6 +4873,7 @@ MonoBehaviour:
   CutID: 0
   ItemOBJ: {fileID: 350384377}
   Spawner: {fileID: 2058218508}
+  Pows: {fileID: 0}
   soundID: 13
   devil: {fileID: 0}
   MapTime: 30
@@ -8717,6 +8718,7 @@ MonoBehaviour:
   HP: 6
   MoveSpeed: 5
   Walkable: 0
+  vCam: {fileID: 0}
   TakeDamagePost: {fileID: 1654646638}
   weapon: {fileID: 1893407499}
   DamageCoolTime: 1
@@ -14264,6 +14266,7 @@ MonoBehaviour:
   CutID: 0
   ItemOBJ: {fileID: 132376167}
   Spawner: {fileID: 99828287}
+  Pows: {fileID: 0}
   soundID: 12
   devil: {fileID: 0}
   MapTime: 25
@@ -16613,6 +16616,7 @@ MonoBehaviour:
   CutID: 0
   ItemOBJ: {fileID: 0}
   Spawner: {fileID: 701893393}
+  Pows: {fileID: 0}
   soundID: 14
   devil: {fileID: 0}
   MapTime: 1
@@ -17078,6 +17082,7 @@ MonoBehaviour:
   CutID: 1
   ItemOBJ: {fileID: 1885928023}
   Spawner: {fileID: 576436619}
+  Pows: {fileID: 0}
   soundID: 11
   devil: {fileID: 0}
   MapTime: 20
@@ -20859,6 +20864,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87ac6accf72944742a1954d7c0a10f2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fastForwardSpeed: 3
   playableDirector: {fileID: 2073263285}
   cutSceneDatas:
   - ID: 1

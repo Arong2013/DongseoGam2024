@@ -19,6 +19,19 @@ public class Field : MonoBehaviour
     {
         SoundManager.Instance.PlayBGM(soundID);
         GameManager.Instance.ItemEnable += SetTrueNextGame;
+        if(Pows)
+        Pows.gameObject.SetActive(false);
+    }
+
+    private void Update()
+    {
+        if (ItemOBJ.gameObject == null)
+        {
+            Utils.GetUI<PlayerInputHandle>().IsinputAble = false;
+            GameManager.Instance.playerMarcine.SetAnimatorValue(CharacterAnimeBoolName.CanWalk, false);
+            GameManager.Instance.playerMarcine.SetDir(new Vector2(0, -1));
+        }
+           
     }
 
     public void SetTrueNextGame()
@@ -30,13 +43,16 @@ public class Field : MonoBehaviour
         else
         {
             SoundManager.Instance.PlayBGM(soundID + 1);
-            CutScenemanager.Instance.PlayCutScene(100);
             Utils.GetUI<PlayerInputHandle>().IsinputAble = false;
             GameManager.Instance.playerMarcine.SetDir(new Vector2(0, -1));
-            GameManager.Instance.playerMarcine.ChangePlayerState(new IdleState(GameManager.Instance.playerMarcine, GameManager.Instance.playerMarcine.GetComponent<Animator>()));
             GameManager.Instance.playerMarcine.SetAnimatorValue(CharacterAnimeBoolName.CanWalk, false);
+            Spawner.gameObject.SetActive(false);
         }
-        Pows.gameObject.SetActive(true);
+        if(Pows)
+        {
+            Pows.gameObject.SetActive(true);
+        }
+
         Spawner.gameObject.SetActive(false);
     }
 
@@ -54,6 +70,7 @@ public class Field : MonoBehaviour
             yield return new WaitForSeconds(1f);
             while (CutScenemanager.Instance.IsCutEnd)
             {
+                print("아아ㅣ");
                 yield return null;
             }
         }
