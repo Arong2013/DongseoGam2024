@@ -9,6 +9,11 @@ public class GameStartBtn : MonoBehaviour, IPointerDownHandler
 {
     public string sceneName = "GameScene";  // 이동할 씬 이름을 지정하는 변수
 
+    private void Start()
+    {
+        SoundManager.Instance.PlayBGM(10);
+    }
+
     public void OnPointerDown(PointerEventData eventData)
     {
         // 버튼이 클릭되면 지정한 씬으로 이동

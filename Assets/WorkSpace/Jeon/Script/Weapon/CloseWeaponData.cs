@@ -30,6 +30,7 @@ public class CloseWeaponData : MonoBehaviour
 
                 // MovePosition을 사용하여 밀어주는 위치로 이동
                 rb.MovePosition(targetPosition);
+                SoundManager.Instance.PlaySFX(3);
             }
         }
     }

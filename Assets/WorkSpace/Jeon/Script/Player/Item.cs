@@ -20,6 +20,8 @@ public class Item : MonoBehaviour
             Utils.GetUI<InventoryUI>().AddItem(itemdata);
             GameManager.Instance.SetTrueNextStage?.Invoke();
             gameObject.SetActive(false);
+            SoundManager.Instance.PlaySFX(8);
+        
         }
     }
 }

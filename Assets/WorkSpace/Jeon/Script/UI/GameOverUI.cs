@@ -14,6 +14,7 @@ public class GameOverUI : MonoBehaviour
 
     public void Start()
     {
+        SoundManager.Instance.PlaySFX(7);
         ExitBtn.onClick.AddListener(() => { SceneManager.LoadScene(sceneName); });
     }
 }

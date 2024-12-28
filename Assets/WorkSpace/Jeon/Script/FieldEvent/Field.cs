@@ -9,12 +9,13 @@ public class Field : MonoBehaviour
     [SerializeField] int CutID;
     [SerializeField] GameObject ItemOBJ;
     [SerializeField] GameObject Spawner;
-
+    [SerializeField] int soundID;
 
     public float MapTime;
 
     public void Start()
     {
+        SoundManager.Instance.PlayBGM(soundID);
         GameManager.Instance.ItemEnable += SetTrueNextGame;
     }
 

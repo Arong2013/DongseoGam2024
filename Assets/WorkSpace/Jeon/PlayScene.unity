@@ -4615,6 +4615,7 @@ MonoBehaviour:
   CutID: 0
   ItemOBJ: {fileID: 350384377}
   Spawner: {fileID: 2058218508}
+  soundID: 13
   MapTime: 3
 --- !u!1 &477162191
 GameObject:
@@ -13301,6 +13302,7 @@ MonoBehaviour:
   CutID: 0
   ItemOBJ: {fileID: 132376167}
   Spawner: {fileID: 99828287}
+  soundID: 12
   MapTime: 3
 --- !u!1 &1312317333
 GameObject:
@@ -15505,6 +15507,7 @@ MonoBehaviour:
   CutID: 0
   ItemOBJ: {fileID: 0}
   Spawner: {fileID: 701893393}
+  soundID: 14
   MapTime: 1
 --- !u!1 &1505211438
 GameObject:
@@ -15968,6 +15971,7 @@ MonoBehaviour:
   CutID: 1
   ItemOBJ: {fileID: 1885928023}
   Spawner: {fileID: 576436619}
+  soundID: 11
   MapTime: 3
 --- !u!1 &1654646635
 GameObject:
