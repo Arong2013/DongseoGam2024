@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/WorkSpace/Jeon/TitleScene.unity
     guid: a23b7f36265d4c04f9361c2068f5e1e6
   - enabled: 1
-    path: Assets/WorkSpace/Jeon/PlayScene.unity
+    path: Assets/WorkSpace/Jeon/NormalScene.unity
     guid: 9872d400d7357b84db0c195057cc4c54
   m_configObjects: {}

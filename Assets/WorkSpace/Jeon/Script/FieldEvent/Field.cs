@@ -9,6 +9,7 @@ public class Field : MonoBehaviour
     [SerializeField] int CutID;
     [SerializeField] GameObject ItemOBJ;
     [SerializeField] GameObject Spawner;
+    [SerializeField] GameObject Pows;
     [SerializeField] int soundID;
 
     public float MapTime;

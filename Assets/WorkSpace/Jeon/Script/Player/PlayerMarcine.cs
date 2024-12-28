@@ -5,11 +5,14 @@ using System.Data;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using Cinemachine;
 using UnityEngine.TextCore.Text;
 using UnityEngine.UIElements;
+
 public class PlayerMarcine : CharacterMarcine
 {
-   [SerializeField] TakeDamagePost TakeDamagePost;
+    [SerializeField] private CinemachineVirtualCamera vCam;
+    [SerializeField] TakeDamagePost TakeDamagePost;
     public Weapon weapon;
 
     public bool isAttackAble => weapon.IsAttackAble();
@@ -23,8 +26,6 @@ public class PlayerMarcine : CharacterMarcine
         LinkUi();
 
     }
-
-
     public void Update()
     {
         SetAnimatorValue(CharacterAnimeBoolName.CanWalk, Walkable);
