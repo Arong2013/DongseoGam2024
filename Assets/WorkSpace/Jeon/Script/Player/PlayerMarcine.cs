@@ -56,7 +56,7 @@ public class PlayerMarcine : CharacterMarcine
             TakeDamagePost.TakeDMG();
             animator.SetTrigger("CanDamage");
 
-            if (HP < 0)
+            if (HP <= 0)
                 GameManager.Instance.GameEnd();
         }
 

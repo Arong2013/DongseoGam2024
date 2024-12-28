@@ -5,21 +5,36 @@ using UnityEngine.Playables;  // PlayableDirector 사용을 위해 추가
 
 public class Field : MonoBehaviour
 {
+    public FieldParent fieldParent;
     [SerializeField] int CutID;
     [SerializeField] GameObject ItemOBJ;
     [SerializeField] GameObject Spawner;
-
+    [SerializeField] int soundID;
 
     public float MapTime;
 
     public void Start()
     {
+        SoundManager.Instance.PlayBGM(soundID);
         GameManager.Instance.ItemEnable += SetTrueNextGame;
     }
 
     public void SetTrueNextGame()
     {
-        ItemOBJ.gameObject.SetActive(true);
+        if (ItemOBJ.gameObject != null)
+        {
+            ItemOBJ.gameObject.SetActive(true);
+        }
+        else
+        {
+            SoundManager.Instance.PlayBGM(soundID + 1);
+            CutScenemanager.Instance.PlayCutScene(100);
+            Utils.GetUI<PlayerInputHandle>().IsinputAble = false;
+            GameManager.Instance.playerMarcine.SetDir(new Vector2(0, -1));
+            GameManager.Instance.playerMarcine.ChangePlayerState(new IdleState(GameManager.Instance.playerMarcine, GameManager.Instance.playerMarcine.GetComponent<Animator>()));
+            GameManager.Instance.playerMarcine.SetAnimatorValue(CharacterAnimeBoolName.CanWalk, false);
+        }
+        
         Spawner.gameObject.SetActive(false);
     }
 
@@ -44,15 +59,11 @@ public class Field : MonoBehaviour
     }
     public void StartWaitForTimelineEnd()
     {
-        if(CutID != 4)
-        {
-            Utils.GetUI<PlayerInputHandle>().IsinputAble = true;
-            GameManager.Instance.playerMarcine.GameStart();
-            TimeManager.Instance.TimeReStart(MapTime);
-            GameManager.Instance.playerMarcine.transform.position = Vector3.zero;
-            Spawner.gameObject.SetActive(true);
-        }
-
+        Utils.GetUI<PlayerInputHandle>().IsinputAble = true;
+        GameManager.Instance.playerMarcine.GameStart();
+        TimeManager.Instance.TimeReStart(MapTime);
+        GameManager.Instance.playerMarcine.transform.position = Vector3.zero;
+        Spawner.gameObject.SetActive(true);
     }
 
 }

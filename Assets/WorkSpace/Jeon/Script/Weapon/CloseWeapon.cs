@@ -21,6 +21,7 @@ public class CloseWeapon : Weapon
     {
         if(cunCoolTime <= 0)
         {
+            SoundManager.Instance.PlaySFX(2);
             cunCoolTime = coolTIme;
             Vector2 normalizedDirection = playerMarcine.AttackAngle.normalized;
             float angle = Mathf.Atan2(normalizedDirection.y, normalizedDirection.x) * Mathf.Rad2Deg;

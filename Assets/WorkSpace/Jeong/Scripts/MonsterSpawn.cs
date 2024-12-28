@@ -9,8 +9,8 @@ public class MonsterSpawn : MonoBehaviour
     public GameObject[] monsterPrefab;
     public Transform[] spawnPoints;
 
-    public float spawnInterval = 2f;            //기본 소환 간격
-    public float minSpawnInterval = 1f;         //최소 소환 간격
+    public float spawnInterval = 0.5f;            //기본 소환 간격
+    public float minSpawnInterval = 0.5f;         //최소 소환 간격
     public float spawnSpeedIncrease = 0.05f;    //소환 주기 감소율
 
     private float currentSpawnInterval;         //현재 소환 간격

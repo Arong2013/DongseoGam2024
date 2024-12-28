@@ -26,7 +26,11 @@ public class MonsterMarcine : CharacterMarcine
         animator.SetTrigger("SetDamage");
         HP -= DMG;
         if (HP < 0)
+        {
             animator.SetTrigger("Dead");
+            SoundManager.Instance.PlaySFX(4);
+        }
+            
     }
 
     private void Update()
