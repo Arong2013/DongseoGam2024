@@ -1,11 +1,17 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class Pupple_Rain : MonoBehaviour
+public class Thron : MonoBehaviour
 {
-    private void Start()
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-      //  gameObject.SetActive(!gameObject.activeSelf);
+        if(collision.GetComponent<PlayerMarcine>())
+        {
+
+        }
+        
     }
 }

@@ -27,6 +27,7 @@ public class Field : MonoBehaviour
         }
         else
         {
+            SoundManager.Instance.PlayBGM(soundID + 1);
             CutScenemanager.Instance.PlayCutScene(100);
             Utils.GetUI<PlayerInputHandle>().IsinputAble = false;
             GameManager.Instance.playerMarcine.SetDir(new Vector2(0, -1));
