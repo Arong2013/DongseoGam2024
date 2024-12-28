@@ -6,7 +6,7 @@ public class FieldParent : MonoBehaviour
 {
     public  int currentID = -1;
     [SerializeField] List<Field> Maps;
-    
+
     public void ChangeMap()
     {
         Utils.GetUI<ChangeFadeUI>().OpenUI();
@@ -23,7 +23,7 @@ public class FieldParent : MonoBehaviour
             Maps[currentID].gameObject.SetActive(false);
         Maps[currentID + 1].gameObject.SetActive(true);
         currentID++;
-        
+
     }
 
     public void MapStart()

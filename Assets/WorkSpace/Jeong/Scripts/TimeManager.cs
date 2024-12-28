@@ -41,6 +41,11 @@ public class TimeManager : Singleton<TimeManager>
 
     public void UpdateTime()
     {
+        if (timeRemaining <= 0)
+        {
+            timeRemaining = 0;
+        }
+
         minutes = Mathf.FloorToInt(timeRemaining / 60);
         seconds = Mathf.FloorToInt(timeRemaining % 60);
     }

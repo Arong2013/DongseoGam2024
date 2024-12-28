@@ -6,12 +6,14 @@ public class Devil : MonoBehaviour
 {
     public Animator animator;
     public TimeManager timeManager;
+    public Field field;
     private RectTransform devilTransform;
+
 
     public float speed = 15f;
     public Vector2 startingPosition;
     private float screenWidth;
-    private int currentMapIndex = 0;
+    private bool isMapChanged = false;
 
     void Start()
     {
@@ -25,10 +27,15 @@ public class Devil : MonoBehaviour
 
     void FixedUpdate()
     {
+        // 맵 변경 감지 후 위치 초기화
+        if (isMapChanged)
+        {
+            DevilRePosition(); // 위치 초기화
+            isMapChanged = false;  // 다시 감지하지 않도록 설정
+        }
+
         DevilAnim();
         MoveDevil();
-        
-
     }
 
     void MoveDevil()
@@ -38,7 +45,6 @@ public class Devil : MonoBehaviour
         if (devilTransform.anchoredPosition.x > screenWidth)
         {
             gameObject.SetActive(false);
-            devilTransform.anchoredPosition = startingPosition;
         }
     }
 
@@ -47,4 +53,14 @@ public class Devil : MonoBehaviour
         animator.SetBool("Run", true);
     }
 
+    public void DevilRePosition()
+    {
+        devilTransform.anchoredPosition = startingPosition;
+        gameObject.SetActive(true);
+    }
+
+    public void NotifyMapChanged()
+    {
+        isMapChanged = true;
+    }
 }
